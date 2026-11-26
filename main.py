@@ -27,6 +27,7 @@ def main() -> None:
 
     with open(OUTPUT_PATH, "r", encoding="utf-8") as f:
         content = f.read()
+    assert content == ENTRY + "\n", "round-trip mismatch: file content differs from ENTRY"
 
     line = content.rstrip("\n")
     assert "\n" not in line, "entry must be exactly one line"
